@@ -1,0 +1,58 @@
+input GoogleAuthTokens {
+    access_token: String,
+    refresh_token: String,
+    scope: String,
+    token_type: String,
+    id_token: String,
+    expiry_date: Int
+}
+
+input InputEvent {
+    id: String,
+    summary: String,
+    description: String,
+    start: String,
+    end: String,
+    attendees: [Attendee]
+}
+
+input Attendee {
+    email: String
+}
+
+type EventDate {
+    dateTime: String,
+    date: String,
+    timezone: String
+}
+
+type EventAttendees {
+    email: String
+}
+
+type GoogleEvent {
+    id: String,
+    created: String,
+    updated: String,
+    summary: String,
+    description: String,
+    htmlLink: String,
+    start: EventDate,
+    end: EventDate,
+    attendees: [EventAttendees]
+}
+
+type GoogleAuth {
+    access_token: String,
+    refresh_token: String
+}
+
+type Query {
+    googleAuth(code: String!): GoogleAuth,
+    events(sub: String!): [GoogleEvent]
+}
+
+type Mutation {
+    addEditEvent(sub: String!, event: InputEvent!): GoogleEvent,
+    deleteEvent(sub: String!, eventId: String!): SuccessResponse
+}

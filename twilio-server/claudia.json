@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "weadmit-serverless-executor",
+    "name": "weadmit-serverless",
+    "region": "us-east-2"
+  }
+}

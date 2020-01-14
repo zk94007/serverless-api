@@ -1,0 +1,17 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.env.local
+.env.dev
+.env.prod
+
+jkw.json
+
+package-lock.json
+
+weadmit-cognito-post-confirm
+weadmit-cognito-pretoken
+weadmit-sms-api

@@ -1,0 +1,13 @@
+scalar GraphQLDateTime
+
+type File {
+    id: ID!
+}
+
+input FileInput {
+    id: ID!
+}
+
+type SuccessResponse {
+    success: Boolean
+}
